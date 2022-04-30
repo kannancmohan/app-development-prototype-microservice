@@ -1,0 +1,11 @@
+---
+server:
+  port: 8881
+spring:
+  application:
+    name: app-development-microservice-blueprint
+# configuration for spring actuator
+management:
+  health:
+    probes:
+      enabled: true
