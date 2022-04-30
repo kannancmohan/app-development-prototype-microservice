@@ -1,4 +1,4 @@
-package com.kcm.msp.dev.appdevelopmentmicroserviceblueprint;
+package com.kcm.msp.dev.app.development.microservice.blueprint;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
