@@ -12,10 +12,7 @@ public class PetServiceImpl implements PetService {
 
   @Override
   public List<Pet> listPets(final Integer limit) {
-    final Pet pet = new Pet();
-    pet.setId(123L);
-    pet.setName("petName");
-    pet.setTag("petTag");
+    final Pet pet = new Pet().id(123L).name("petName").tag("petTag");
     return List.of(pet);
   }
 
@@ -24,10 +21,6 @@ public class PetServiceImpl implements PetService {
     if (StringUtils.isBlank(id)) {
       throw new ItemNotFoundException("Item not found");
     }
-    final Pet pet = new Pet();
-    pet.setId(123L);
-    pet.setName("petName");
-    pet.setTag("petTag");
-    return pet;
+    return new Pet().id(123L).name("petName").tag("petTag");
   }
 }
