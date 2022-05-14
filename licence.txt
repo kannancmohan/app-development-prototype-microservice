@@ -1,1 +1,1 @@
-test project license file
+This is test license file

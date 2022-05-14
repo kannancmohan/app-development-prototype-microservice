@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <relativePath/>
   </parent>
-  <groupId>com.kcm.msp.dev</groupId>
+
   <artifactId>app-development-microservice-blueprint</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>app-development-microservice-blueprint</name>
@@ -43,12 +43,6 @@
     <dependency>
       <groupId>io.swagger</groupId>
       <artifactId>swagger-annotations</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.kcm.msp.dev</groupId>
-      <artifactId>app-development-shared-resource</artifactId>
-      <classifier>resources</classifier>
-      <type>zip</type>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -97,10 +91,6 @@
       <plugin>
         <groupId>com.societegenerale.commons</groupId>
         <artifactId>arch-unit-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
