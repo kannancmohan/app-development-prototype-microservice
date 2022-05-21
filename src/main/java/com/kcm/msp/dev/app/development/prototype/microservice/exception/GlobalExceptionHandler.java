@@ -1,6 +1,6 @@
-package com.kcm.msp.dev.app.development.microservice.blueprint.exception;
+package com.kcm.msp.dev.app.development.prototype.microservice.exception;
 
-import com.kcm.msp.dev.app.development.microservice.blueprint.models.Error;
+import com.kcm.msp.dev.app.development.prototype.microservice.models.Error;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

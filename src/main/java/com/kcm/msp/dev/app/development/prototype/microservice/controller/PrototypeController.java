@@ -1,10 +1,10 @@
-package com.kcm.msp.dev.app.development.microservice.blueprint.controller;
+package com.kcm.msp.dev.app.development.prototype.microservice.controller;
 
 import static org.springframework.http.HttpStatus.OK;
 
-import com.kcm.msp.dev.app.development.microservice.blueprint.api.PrototypeApi;
-import com.kcm.msp.dev.app.development.microservice.blueprint.models.Pet;
-import com.kcm.msp.dev.app.development.microservice.blueprint.service.PetService;
+import com.kcm.msp.dev.app.development.prototype.microservice.api.PrototypeApi;
+import com.kcm.msp.dev.app.development.prototype.microservice.models.Pet;
+import com.kcm.msp.dev.app.development.prototype.microservice.service.PetService;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

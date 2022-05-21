@@ -1,8 +1,8 @@
-package com.kcm.msp.dev.app.development.microservice.blueprint.service.impl;
+package com.kcm.msp.dev.app.development.prototype.microservice.service.impl;
 
-import com.kcm.msp.dev.app.development.microservice.blueprint.exception.ItemNotFoundException;
-import com.kcm.msp.dev.app.development.microservice.blueprint.models.Pet;
-import com.kcm.msp.dev.app.development.microservice.blueprint.service.PetService;
+import com.kcm.msp.dev.app.development.prototype.microservice.exception.ItemNotFoundException;
+import com.kcm.msp.dev.app.development.prototype.microservice.models.Pet;
+import com.kcm.msp.dev.app.development.prototype.microservice.service.PetService;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
