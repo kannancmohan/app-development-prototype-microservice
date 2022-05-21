@@ -17,7 +17,7 @@
   <properties>
     <java.version>17</java.version>
     <open-api-server-package>app.development.prototype.microservice</open-api-server-package>
-    <open-api-client-package>app.development.prototype.microservice.client</open-api-client-package>
+    <open-api-client-package>app.development.prototype.client</open-api-client-package>
   </properties>
   <dependencies>
     <dependency>
