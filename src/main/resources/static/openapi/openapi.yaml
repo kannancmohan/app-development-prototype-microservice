@@ -7,14 +7,14 @@ info:
 servers:
   - url: http://localhost:8881
 tags:
-  - name: blueprint
+  - name: prototype
 paths:
   /pets:
     get:
       summary: List all pets
       operationId: listPets
       tags:
-        - blueprint
+        - prototype
       parameters:
         - name: limit
           in: query
@@ -45,7 +45,7 @@ paths:
       summary: Create a pet
       operationId: createPets
       tags:
-        - blueprint
+        - prototype
       responses:
         '201':
           description: Null response
@@ -60,7 +60,7 @@ paths:
       summary: Info for a specific pet
       operationId: showPetById
       tags:
-        - blueprint
+        - prototype
       parameters:
         - name: petId
           in: path

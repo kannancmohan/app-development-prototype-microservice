@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppDevelopmentMicroserviceBlueprintApplication {
+public class AppDevelopmentPrototypeMicroserviceApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(AppDevelopmentMicroserviceBlueprintApplication.class, args);
+    SpringApplication.run(AppDevelopmentPrototypeMicroserviceApplication.class, args);
   }
 }

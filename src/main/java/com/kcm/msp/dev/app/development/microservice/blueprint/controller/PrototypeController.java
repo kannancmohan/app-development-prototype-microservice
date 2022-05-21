@@ -2,7 +2,7 @@ package com.kcm.msp.dev.app.development.microservice.blueprint.controller;
 
 import static org.springframework.http.HttpStatus.OK;
 
-import com.kcm.msp.dev.app.development.microservice.blueprint.api.BlueprintApi;
+import com.kcm.msp.dev.app.development.microservice.blueprint.api.PrototypeApi;
 import com.kcm.msp.dev.app.development.microservice.blueprint.models.Pet;
 import com.kcm.msp.dev.app.development.microservice.blueprint.service.PetService;
 import java.util.List;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @AllArgsConstructor
-public class BlueprintController implements BlueprintApi {
+public class PrototypeController implements PrototypeApi {
 
   private final PetService petService;
 

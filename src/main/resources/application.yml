@@ -3,7 +3,7 @@ server:
   port: 8881
 spring:
   application:
-    name: app-development-microservice-blueprint
+    name: app-development-prototype-microservice
 # configuration for spring actuator
 management:
   health:
