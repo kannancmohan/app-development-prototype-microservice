@@ -11,10 +11,11 @@
   </parent>
 
   <artifactId>app-development-prototype-microservice</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>${revision}</version>
   <name>app-development-prototype-microservice</name>
   <description>Microservice prototype service</description>
   <properties>
+    <revision>0.0.1-SNAPSHOT</revision>
     <java.version>17</java.version>
     <open-api-server-package>app.development.prototype.microservice</open-api-server-package>
     <open-api-client-package>app.development.prototype.client</open-api-client-package>
