@@ -18,8 +18,12 @@
     open-api-client-package
 
 ## Build and Start the application
-    Build application using 'mvn clean install'
-    Run application using mvn spring-boot:run
+    Build application 
+        * mvn clean install
+    Build application skip integration test
+        * mvn clean install -Dskip.integration.test=true
+    Run application using 
+        * mvn spring-boot:run
 
 ## swagger ui endpoint
     http://localhost:8881/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
