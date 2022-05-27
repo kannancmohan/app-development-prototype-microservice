@@ -25,7 +25,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
   @ExceptionHandler(value = {ItemNotFoundException.class})
   public final ResponseEntity<Error> handleItemNotFoundException(
-      final ItemNotFoundException ex, final WebRequest request) {
+      final Exception ex, final WebRequest request) {
     final Error error = new Error();
     error.setCode(HttpStatus.NOT_FOUND.getReasonPhrase());
     error.setMessage(ex.getLocalizedMessage());
