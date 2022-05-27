@@ -1,6 +1,7 @@
 package com.kcm.msp.dev.app.development.prototype.microservice;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.kcm.msp.dev.app.development.prototype.microservice.controller.PrototypeController;
 import org.junit.jupiter.api.Tag;
@@ -18,6 +19,12 @@ class AppDevelopmentPrototypeMicroserviceApplicationTest {
 
   @Test
   void contextLoads() {
-    assertNotNull(prototypeController, () -> "The prototypeController should not be null");
+    assertNotNull(prototypeController, "The prototypeController should not be null");
+  }
+
+  @Test
+  void testMainMethod() {
+    AppDevelopmentPrototypeMicroserviceApplication.main(new String[] {""});
+    assertTrue(true, "main method executed");
   }
 }

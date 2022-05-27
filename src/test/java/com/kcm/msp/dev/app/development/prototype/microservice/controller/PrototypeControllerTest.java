@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.HttpStatus.OK;
 
@@ -57,12 +58,12 @@ final class PrototypeControllerTest {
 
     @BeforeEach
     void beforeEach() {
-      when(petService.showPetById(any())).thenReturn(getPetInstance());
+      when(petService.showPetById(anyString())).thenReturn(getPetInstance());
     }
 
     @Test
     void showPetByIdShouldReturnPet() {
-      final ResponseEntity<Pet> responseEntity = classUnderTest.showPetById(null);
+      final ResponseEntity<Pet> responseEntity = classUnderTest.showPetById("123");
       assertNotNull(responseEntity);
       assertAll(
           () -> assertEquals(OK, responseEntity.getStatusCode()),

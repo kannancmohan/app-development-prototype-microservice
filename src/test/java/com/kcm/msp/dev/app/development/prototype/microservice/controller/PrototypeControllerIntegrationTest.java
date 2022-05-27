@@ -7,8 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.OK;
 
+import com.kcm.msp.dev.app.development.prototype.microservice.exception.ItemNotFoundException;
+import com.kcm.msp.dev.app.development.prototype.microservice.models.Error;
 import com.kcm.msp.dev.app.development.prototype.microservice.models.Pet;
 import com.kcm.msp.dev.app.development.prototype.microservice.service.PetService;
 import java.net.URL;
@@ -58,6 +62,17 @@ final class PrototypeControllerIntegrationTest {
           () -> assertTrue(responseEntity.hasBody()),
           () -> assertFalse(responseEntity.getBody().isEmpty()));
     }
+
+    @Test
+    @DisplayName("GET /pets should return INTERNAL_SERVER_ERROR")
+    void petsShouldReturnError() throws Exception {
+      when(petService.listPets(any())).thenThrow(new RuntimeException("some error occurred"));
+      final String url = new URL(TEST_URL + port + "/pets").toString();
+      final ResponseEntity<Error> responseEntity =
+          restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<>() {});
+      assertNotNull(responseEntity);
+      assertEquals(INTERNAL_SERVER_ERROR, responseEntity.getStatusCode());
+    }
   }
 
   @Nested
@@ -73,6 +88,19 @@ final class PrototypeControllerIntegrationTest {
       assertNotNull(responseEntity);
       assertAll(
           () -> assertEquals(OK, responseEntity.getStatusCode()),
+          () -> assertNotNull(responseEntity.getBody()));
+    }
+
+    @Test
+    @DisplayName("GET /pets/{petId} should return NOT_FOUND")
+    void showPetByIdShouldReturnException() throws Exception {
+      when(petService.showPetById(any())).thenThrow(new ItemNotFoundException("item not found"));
+      final String url = new URL(TEST_URL + port + "/pets/123").toString();
+      final ResponseEntity<Error> responseEntity =
+          restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<>() {});
+      assertNotNull(responseEntity);
+      assertAll(
+          () -> assertEquals(NOT_FOUND, responseEntity.getStatusCode()),
           () -> assertNotNull(responseEntity.getBody()));
     }
   }
