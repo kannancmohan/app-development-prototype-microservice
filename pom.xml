@@ -17,8 +17,8 @@
   <properties>
     <revision>0.0.1-SNAPSHOT</revision>
     <java.version>17</java.version>
-    <open-api-server-package>app.development.prototype.microservice</open-api-server-package>
-    <open-api-client-package>app.development.prototype.client</open-api-client-package>
+    <generate-openapi-server-code.package>app.development.prototype.microservice</generate-openapi-server-code.package>
+    <generate-openapi-client-code.package>app.development.prototype.client</generate-openapi-client-code.package>
   </properties>
   <dependencies>
     <dependency>
@@ -83,7 +83,7 @@
         <executions>
           <!-- overriding the parent execution to disable the generation of openapi client code -->
           <!--<execution>
-            <id>generate-openapi-java-client-code</id>
+            <id>generate-openapi-client-code</id>
             <phase/>
           </execution>-->
         </executions>
