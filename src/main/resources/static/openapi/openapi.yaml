@@ -1,4 +1,4 @@
-openapi: "3.0.3"
+openapi: 3.0.3
 info:
   version: 1.0.0
   title: Swagger Petstore
@@ -7,14 +7,15 @@ info:
 servers:
   - url: http://localhost:8881
 tags:
-  - name: prototype
+  - name: Prototype
+    description: Please use tags name starting with capitals
 paths:
   /pets:
     get:
       summary: List all pets
       operationId: listPets
       tags:
-        - prototype
+        - Prototype
       parameters:
         - name: limit
           in: query
@@ -24,7 +25,7 @@ paths:
             type: integer
             format: int32
       responses:
-        '200':
+        "200":
           description: A paged array of pets
           headers:
             x-next:
@@ -35,32 +36,32 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Pets"
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
     post:
       summary: Create a pet
       operationId: createPets
       tags:
-        - prototype
+        - Prototype
       responses:
-        '201':
+        "201":
           description: Null response
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
   /pets/{petId}:
     get:
       summary: Info for a specific pet
       operationId: showPetById
       tags:
-        - prototype
+        - Prototype
       parameters:
         - name: petId
           in: path
@@ -69,18 +70,14 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Pet"
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
 components:
   schemas:
     Pet:
@@ -110,3 +107,34 @@ components:
           type: string
         message:
           type: string
+  responses:
+    NotFound:
+      description: The specified resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Request syntax is invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authorization information is missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: Not authorized to view this resource.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    UnexpectedError:
+      description: Unexpected Server error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
