@@ -93,6 +93,9 @@ components:
           type: string
         tag:
           type: string
+        dateOfBirth:
+          type: string
+          format: date
     Pets:
       type: array
       items:
