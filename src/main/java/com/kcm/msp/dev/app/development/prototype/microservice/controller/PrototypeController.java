@@ -5,6 +5,7 @@ import static org.springframework.http.HttpStatus.OK;
 import com.kcm.msp.dev.app.development.prototype.microservice.api.PrototypeApi;
 import com.kcm.msp.dev.app.development.prototype.microservice.models.Pet;
 import com.kcm.msp.dev.app.development.prototype.microservice.service.PetService;
+import java.time.LocalDate;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,8 @@ public class PrototypeController implements PrototypeApi {
   private final PetService petService;
 
   @Override
-  public ResponseEntity<List<Pet>> listPets(final Integer limit) {
+  public ResponseEntity<List<Pet>> listPets(
+      final Integer limit, final String ownerEmail, final LocalDate dateOfBirth) {
     final List<Pet> pets = petService.listPets(limit);
     return ResponseEntity.status(OK).body(pets);
   }

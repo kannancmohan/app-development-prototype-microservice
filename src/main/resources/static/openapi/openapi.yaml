@@ -17,13 +17,9 @@ paths:
       tags:
         - Prototype
       parameters:
-        - name: limit
-          in: query
-          description: How many items to return at one time (max 100)
-          required: false
-          schema:
-            type: integer
-            format: int32
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/email'
+        - $ref: '#/components/parameters/dob'
       responses:
         "200":
           description: A paged array of pets
@@ -79,7 +75,39 @@ paths:
         "500":
           $ref: "#/components/responses/UnexpectedError"
 components:
+  parameters:
+    limit:
+      name: limit
+      in: query
+      description: How many items to return at one time (max 100)
+      required: true
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        default: 10
+    email:
+      name: owner-email
+      in: query
+      description: owner email id
+      required: false
+      schema:
+        $ref: "#/components/schemas/Email"
+    dob:
+      name: date-of-birth
+      in: query
+      description: pet date of birth (yyyy-MM-dd)
+      required: false
+      schema:
+        $ref: "#/components/schemas/DateOfBirth"
   schemas:
+    Email:
+      type: string
+      format: email
+    DateOfBirth:
+      type: string
+      format: date
+      example: 2019-08-16
     Pet:
       type: object
       required:
@@ -94,8 +122,9 @@ components:
         tag:
           type: string
         dateOfBirth:
-          type: string
-          format: date
+          $ref: "#/components/schemas/DateOfBirth"
+        ownerEmail:
+          $ref: "#/components/schemas/Email"
     Pets:
       type: array
       items:

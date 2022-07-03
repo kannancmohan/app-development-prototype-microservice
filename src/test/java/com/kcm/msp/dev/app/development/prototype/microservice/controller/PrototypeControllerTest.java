@@ -43,7 +43,7 @@ final class PrototypeControllerTest {
 
     @Test
     void petsShouldReturnListOfPets() {
-      final ResponseEntity<List<Pet>> responseEntity = classUnderTest.listPets(null);
+      final ResponseEntity<List<Pet>> responseEntity = classUnderTest.listPets(null, "", null);
       assertNotNull(responseEntity);
       assertNotNull(responseEntity.getBody());
       assertAll(
