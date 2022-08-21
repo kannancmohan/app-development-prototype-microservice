@@ -2,9 +2,9 @@ package com.kcm.msp.dev.app.development.prototype.microservice.controller;
 
 import static org.springframework.http.HttpStatus.OK;
 
-import com.kcm.msp.dev.app.development.prototype.microservice.api.PrototypeApi;
-import com.kcm.msp.dev.app.development.prototype.microservice.models.CreatePetRequest;
-import com.kcm.msp.dev.app.development.prototype.microservice.models.Pet;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.api.PrototypeApi;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.models.CreatePetRequest;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.models.Pet;
 import com.kcm.msp.dev.app.development.prototype.microservice.service.PetService;
 import java.time.LocalDate;
 import java.util.List;

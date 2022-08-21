@@ -1,8 +1,8 @@
 package com.kcm.msp.dev.app.development.prototype.microservice.service.impl;
 
 import com.kcm.msp.dev.app.development.prototype.microservice.exception.ItemNotFoundException;
-import com.kcm.msp.dev.app.development.prototype.microservice.models.CreatePetRequest;
-import com.kcm.msp.dev.app.development.prototype.microservice.models.Pet;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.models.CreatePetRequest;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.models.Pet;
 import com.kcm.msp.dev.app.development.prototype.microservice.service.PetService;
 import java.time.LocalDate;
 import java.util.List;
@@ -28,7 +28,7 @@ public class PetServiceImpl implements PetService {
                       .tag("petTag" + value)
                       .dateOfBirth(LocalDate.now())
                       .ownerEmail("test" + value + "@email.com"))
-          .toList();
+          .collect(Collectors.toList());
 
   @Override
   public List<Pet> listPets(final Integer limit) {

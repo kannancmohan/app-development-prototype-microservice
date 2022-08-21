@@ -1,7 +1,7 @@
 package com.kcm.msp.dev.app.development.prototype.microservice.service;
 
-import com.kcm.msp.dev.app.development.prototype.microservice.models.CreatePetRequest;
-import com.kcm.msp.dev.app.development.prototype.microservice.models.Pet;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.models.CreatePetRequest;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.models.Pet;
 import java.util.List;
 
 public interface PetService {

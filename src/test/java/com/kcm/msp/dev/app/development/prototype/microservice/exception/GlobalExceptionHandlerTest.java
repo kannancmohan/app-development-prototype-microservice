@@ -6,7 +6,7 @@ import static org.mockito.Mockito.mock;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
-import com.kcm.msp.dev.app.development.prototype.microservice.models.Error;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.models.Error;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

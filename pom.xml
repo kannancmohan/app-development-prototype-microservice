@@ -17,8 +17,10 @@
   <properties>
     <revision>0.0.1-SNAPSHOT</revision>
     <java.version>17</java.version>
-    <generate-openapi-server-code.package>app.development.prototype.microservice</generate-openapi-server-code.package>
-    <generate-openapi-client-code.package>app.development.prototype.client</generate-openapi-client-code.package>
+    <generate-openapi-server-code.package>app.development.prototype.microservice.server</generate-openapi-server-code.package>
+    <generate-openapi-client-code.package>app.development.prototype.microservice.client</generate-openapi-client-code.package>
+    <!-- This will override the variables set in openapi spec and its generated classes-->
+    <generate-openapi-client-code.overrideServerVariables>hostUrl=https://test.localhost:8881</generate-openapi-client-code.overrideServerVariables>
   </properties>
   <dependencies>
     <dependency>

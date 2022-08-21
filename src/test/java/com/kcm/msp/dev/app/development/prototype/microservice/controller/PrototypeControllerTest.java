@@ -10,7 +10,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.HttpStatus.OK;
 
-import com.kcm.msp.dev.app.development.prototype.microservice.models.Pet;
+import com.kcm.msp.dev.app.development.prototype.microservice.server.models.Pet;
 import com.kcm.msp.dev.app.development.prototype.microservice.service.PetService;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
