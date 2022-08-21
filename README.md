@@ -1,5 +1,5 @@
 # app-development-prototype-microservice
-    spring boot microservice implementation
+    spring boot microservice implementation using api first approach
 ## project initial setup
     Add supressions.xml for maven-checkstyle-plugin
     Add .mvn/jvm.config to fix issue with git-code-format-maven-plugin . check https://github.com/Cosium/git-code-format-maven-plugin
@@ -20,8 +20,9 @@
 ## Build and Start the application
     Build application 
         * mvn clean install
-    Build application skip integration test
-        * mvn clean install -Dskip.integration.test=true
+        * mvn clean install -Dskip.integration.test=true [To skip integration test]
+        * mvn clean install -Dskip.integration.test=true [To skip archunit test]
+        * mvn clean install -Pquality-assurance-check [To include owasp check and other quality cheks]
     Run application using 
         * mvn spring-boot:run
 
